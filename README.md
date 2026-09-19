@@ -1,34 +1,33 @@
-# 李宗翰 · 个人网站
+# 李宗翰 · 工程作品集
 
-适合 GitHub Pages 的静态个人主页，包含介绍、作品、关于和 GitHub 联系入口。没有构建依赖，不需要数据库或付费服务。支持手机屏幕、键盘导航和系统减少动画偏好；所有网页资源随仓库提供，不依赖外部字体/CDN。
+网站：https://lizonghan24-prog.github.io/
 
-## 修改资料
+面向嵌入式系统、运动控制与设备软件的个人作品集。首页展示七个精选项目，支持按专业方向筛选；每个项目有独立静态详情页，介绍问题、系统组成、工程重点、产物和当前阶段。
 
-- `dist/profile.js`：站点名称、问候语、介绍、GitHub 和邮箱。邮箱留空不会显示。
-- `dist/index.html`：首页结构、作品和无需 JavaScript 时显示的内容；修改资料后建议同步这里的标题与介绍，以便搜索引擎直接读取。
-- `dist/styles.css`：颜色与布局。
+## 内容与生成
 
-目前个人介绍是可修改的初稿；作品仅展示这个已实现的网站，没有填写虚构的经历或项目。
+- `content/projects.json`：七个项目的公开介绍、技术标签、进展及边界。
+- `build.py`：用 Python 标准库生成首页、项目页、站点地图和 robots.txt。
+- `dist/styles.css`：响应式样式。
+- `dist/script.js`：渐进增强的项目筛选；关闭 JavaScript 仍能浏览全部内容。
+- `dist/favicon.svg`：站点图标。
 
-## 发布到 GitHub Pages
+修改内容后运行 `python build.py`，将生成的 `dist` 文件一起提交。页面不依赖外部字体、CDN、数据库或运行时框架。概念插图由 SVG 绘制，已标注为示意图，不代表产品实拍、实测波形或实际软件截图。
 
-目标仓库：`lizonghan24-prog/lizonghan24-prog.github.io`。
-
-1. 在 GitHub 上创建上述公开仓库，将本目录内的文件（包括 `.github`）推送到 `main` 分支。
-2. 进入仓库 **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**。
-3. 在 **Actions → Publish personal website** 中运行工作流；之后每次推送到 `main` 都会自动更新。
-4. 工作流成功后访问 `https://lizonghan24-prog.github.io/`。
-
-只有 `dist` 中的公开网页会被部署，不会公开本机其他文件。仓库本身的源码在公开仓库中可见。
-
-官方说明：https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
-
-## 本地预览
-
-在本目录执行：
+## 预览与发布
 
 ```powershell
+python build.py
 python -m http.server 4173 --bind 127.0.0.1 --directory dist
 ```
 
-然后打开 http://127.0.0.1:4173/ 。也可以直接双击 `dist/index.html` 预览。
+推送到 `main` 后，`.github/workflows/pages.yml` 部署 `dist` 到 GitHub Pages。仓库仅包含公开作品介绍与网页源码，不包含本地工程、内部交付文件或历史聊天。
+
+## 表达与设计参考
+
+参考以专业方向组织能力、通过具体项目展开的表达方式，本站重新制作布局、文案与概念图：
+
+- [Curt Henrichs Portfolio](https://curthenrichs.github.io/)
+- [Pankaja Malshan Portfolio](https://pankaja2328.github.io/PortFolio/)
+
+项目背景保留在详情页；首页侧重工程问题与实现。进展按已有工程和交付记录描述，未验证的指标不作为成果展示。
