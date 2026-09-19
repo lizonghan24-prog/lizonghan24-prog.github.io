@@ -1,6 +1,61 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>低功耗智能眼镜 | 李宗翰</title><meta name="description" content="在 MCU 上连接声音、传感器与显示，探索有限场景下的离线交互和按需功耗管理。"><meta name="theme-color" content="#f5f6f2">
-<link rel="canonical" href="https://lizonghan24-prog.github.io/projects/smart-glasses.html"><meta property="og:type" content="website"><meta property="og:title" content="低功耗智能眼镜 | 李宗翰"><meta property="og:description" content="在 MCU 上连接声音、传感器与显示，探索有限场景下的离线交互和按需功耗管理。"><meta property="og:url" content="https://lizonghan24-prog.github.io/projects/smart-glasses.html">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css"><script src="../script.js" defer></script></head><body>
-<a class="skip" href="#main">跳转到正文</a><header class="site-header"><div class="wrap nav-inner"><a class="brand" href="../index.html" aria-label="李宗翰，首页"><span class="brand-mark">LZ<span>·</span></span><span>李宗翰<small>ZONGHAN LI</small></span></a><nav aria-label="主导航"><a href="../index.html#projects">项目</a><a href="../index.html#approach">工作方式</a><a href="../index.html#about">关于</a></nav><a class="nav-github" href="https://github.com/lizonghan24-prog" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">（新标签页）</span></a></div></header><main id="main" class="case-main wrap"><a class="back-link" href="../index.html#projects">← 返回项目列表</a><section class="case-hero"><p class="eyebrow">PROJECT 02 / EMBEDDED INTERACTION</p><h1>低功耗智能眼镜</h1><p class="case-summary">在 MCU 上连接声音、传感器与显示，探索有限场景下的离线交互和按需功耗管理。</p><div class="case-meta"><span>嵌入式设备</span><span class="status">开发与联调</span><div class="tags"><span>STM32U5</span><span>PDM / DMA</span><span>低功耗</span></div></div></section><div class="case-visual mint"><div class="case-illustration"><svg class="project-illustration" viewBox="0 0 500 240" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M91 92h130l16 18h28l15-18h128M91 92l-28-28h42M408 92l28-28h-42"/><rect x="103" y="101" width="119" height="72" rx="27"/><rect x="278" y="101" width="119" height="72" rx="27"/><path d="M222 126q28-24 56 0M116 119h20m-20 8h34M293 119h37m-37 8h48"/><path stroke-dasharray="3 7" d="M249 53v36m0 77v40"/><circle cx="249" cy="43" r="8"/><path d="M234 193h30m-24 7h18m-12 7h6"/></g></svg></div><div class="case-visual-copy"><span class="eyebrow">SYSTEM CONCEPT</span><p>围绕可穿戴设备的资源约束，构建声音采集、有限场景语义处理、短语翻译显示与多传感器交互的软件链路。</p><small>系统概念示意 · 非产品实拍</small></div></div><div class="case-layout"><aside class="case-aside"><span class="eyebrow">IN THIS PROJECT</span><nav aria-label="项目页导航"><a href="#overview">项目概览</a><a href="#engineering">工程重点</a><a href="#delivery">产物与进展</a></nav></aside><div class="case-content"><section id="overview"><p class="eyebrow">01 / OVERVIEW</p><h2>连接哪些环节</h2><p>低功耗嵌入式竞赛项目，工程名称 qiansai。重点是 MCU 上的本地处理与设备交互。</p><ol class="flow"><li><span>01</span>双麦 / 传感器</li><li><span>02</span>采集与过滤</li><li><span>03</span>场景处理</li><li><span>04</span>显示与待机</li></ol></section><section id="engineering"><p class="eyebrow">02 / ENGINEERING</p><h2>工程重点</h2><div class="focus-list"><article><span>01</span><div><h3>连续音频采集</h3><p>利用 MDF 与 GPDMA 组织双通道 PDM 麦克风采集，按音频帧进行声音活动检测与前端处理。</p></div></article><article><span>02</span><div><h3>有限场景本地交互</h3><p>结合场景约束和本地短语资料，实现特定场景的语义处理与中英文显示。</p></div></article><article><span>03</span><div><h3>业务驱动的功耗管理</h3><p>将采集、屏幕与传感器工作状态关联到运行和待机流程，同时处理触摸、运动与显示交互。</p></div></article></div></section><section id="delivery"><p class="eyebrow">03 / PROGRESS</p><h2>产物与当前进展</h2><ul class="deliverables"><li>STM32U5 嵌入式工程</li><li>软件整体与模块设计说明</li><li>本地短语资料、字模工具与调试记录</li></ul><div class="progress-note"><span>当前阶段</span><p>当前实现面向有限场景的短语处理与设备交互。后续工作包括整机联调、场景覆盖评估和实际功耗测量。</p></div></section></div></div><a class="next-project" href="./motor-lab.html"><span><small>NEXT PROJECT / 下一个项目</small><strong>电机控制与实验采集系统</strong></span><span aria-hidden="true">↗</span></a></main><footer class="wrap footer"><span>© <span data-year>2026</span> 李宗翰</span><span>EMBEDDED SYSTEMS · SOFTWARE · INTERACTION</span><a href="../index.html">回到首页 ↑</a></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>低功耗智能眼镜 — 李宗翰</title>
+  <meta name="description" content="基于 STM32U5 的可穿戴设备，包含双麦采集、短语翻译显示、传感器交互和待机管理。">
+  <meta name="theme-color" content="#faf9f6">
+  <link rel="canonical" href="https://lizonghan24-prog.github.io/projects/smart-glasses.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="低功耗智能眼镜 — 李宗翰">
+  <meta property="og:description" content="基于 STM32U5 的可穿戴设备，包含双麦采集、短语翻译显示、传感器交互和待机管理。">
+  <meta property="og:url" content="https://lizonghan24-prog.github.io/projects/smart-glasses.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=4ef9495466">
+</head>
+<body>
+<a class="skip" href="#main">跳转到正文</a>
+<header class="site-header page-width">
+  <a class="site-name" href="../index.html">李宗翰<span>Zonghan Li</span></a>
+  <nav aria-label="主导航">
+    <a href="../index.html#projects">项目</a>
+    <a href="../index.html#about">关于</a>
+    <a href="https://github.com/lizonghan24-prog">GitHub<span aria-hidden="true"> ↗</span></a>
+  </nav>
+</header>
+<main id="main" class="article-width" tabindex="-1">
+  <a class="back-link" href="../index.html#projects">← 所有项目</a>
+  <article class="project-article">
+    <header class="article-header">
+      <p class="article-category">设备与软件</p>
+      <h1>低功耗智能眼镜</h1>
+      <p class="article-tools">STM32U5 · PDM · MDF / GPDMA</p>
+    </header>
+    <p class="article-intro">这是一个面向低功耗嵌入式竞赛的智能眼镜项目。主控是 STM32U5A9，软件包括双麦声音采集、显示、触摸与运动感知，以及运行和待机状态的切换。</p>
+    <section>
+      <h2>音频采集</h2>
+      <p>双通道 PDM 麦克风通过 MDF 和 GPDMA 连续采集音频，软件按帧进行前端处理和声音活动检测。这样的分工减少了逐采样中断处理。</p>
+    </section>
+    <section>
+      <h2>本地短语处理</h2>
+      <p>项目使用本地短语资料和场景约束，处理特定场景的中英文显示。当前范围是有限场景的短语处理，不是任意语句的离线语音识别或翻译。</p>
+    </section>
+    <section>
+      <h2>传感器和待机</h2>
+      <p>设备还接入了 IMU、QVAR 触摸、光照和电量检测。进入待机后，软件停止音频采集，并管理麦克风时钟和屏幕背光。</p>
+      <p>目前已有 MCU 工程、模块说明、字模与词库工具，以及设备调试记录。整机功耗仍需要实际测量。</p>
+    </section>
+    <p class="project-note">正在进行设备联调。</p>
+  </article>
+<nav class="article-navigation" aria-label="其他项目">
+  <a href="../index.html#projects">项目列表</a>
+  <a href="./agent-keypad.html">四键 AI 控制器 →</a>
+</nav>
+</main>
+<footer class="page-width site-footer">
+  <span>© 2026 李宗翰</span>
+  <a href="../index.html">首页</a>
+</footer>
+</body>
+</html>

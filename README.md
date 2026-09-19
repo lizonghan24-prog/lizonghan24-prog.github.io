@@ -1,18 +1,17 @@
-# 李宗翰 · 工程作品集
+# 李宗翰的个人主页
 
 网站：https://lizonghan24-prog.github.io/
 
-面向嵌入式系统、运动控制与设备软件的个人作品集。首页展示七个精选项目，支持按专业方向筛选；每个项目有独立静态详情页，介绍问题、系统组成、工程重点、产物和当前阶段。
+首页为个人介绍和七个项目的文字索引。每个项目有独立页面，说明实现内容、调试工作和目前的进展。
 
 ## 内容与生成
 
-- `content/projects.json`：七个项目的公开介绍、技术标签、进展及边界。
+- `content/projects.json`：项目摘要、技术信息和正文。
 - `build.py`：用 Python 标准库生成首页、项目页、站点地图和 robots.txt。
 - `dist/styles.css`：响应式样式。
-- `dist/script.js`：渐进增强的项目筛选；关闭 JavaScript 仍能浏览全部内容。
 - `dist/favicon.svg`：站点图标。
 
-修改内容后运行 `python build.py`，将生成的 `dist` 文件一起提交。页面不依赖外部字体、CDN、数据库或运行时框架。概念插图由 SVG 绘制，已标注为示意图，不代表产品实拍、实测波形或实际软件截图。
+修改内容后运行 `python build.py`，将生成的 `dist` 文件一起提交。所有页面直接使用 HTML 与 CSS，不需要 JavaScript、外部字体、CDN、数据库或运行时框架。样式链接带文件内容摘要，避免改版后仍使用旧缓存。
 
 ## 预览与发布
 
@@ -25,9 +24,10 @@ python -m http.server 4173 --bind 127.0.0.1 --directory dist
 
 ## 表达与设计参考
 
-参考以专业方向组织能力、通过具体项目展开的表达方式，本站重新制作布局、文案与概念图：
+参考以下主页的文字排版和项目介绍方式。本站文案与样式独立编写，没有复制其代码或内容：
 
-- [Curt Henrichs Portfolio](https://curthenrichs.github.io/)
-- [Pankaja Malshan Portfolio](https://pankaja2328.github.io/PortFolio/)
+- [Ben Kuhn](https://www.benkuhn.net/)：短介绍、明确的内容列表、适合阅读的行宽。
+- [Andrej Karpathy](https://karpathy.ai/)：以具体经历和项目为主的个人介绍。
+- [Bartosz Ciechanowski](https://ciechanow.ski/)：技术文章的正文层级与段落间距。
 
-项目背景保留在详情页；首页侧重工程问题与实现。进展按已有工程和交付记录描述，未验证的指标不作为成果展示。
+首页去掉了装饰示意图、口号、筛选按钮、状态徽章和流程介绍。项目背景保留在详情页；进展按已有工程和交付记录描述。

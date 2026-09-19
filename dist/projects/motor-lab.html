@@ -1,6 +1,58 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>电机控制与实验采集系统 | 李宗翰</title><meta name="description" content="以 M3508 为实验对象，贯通闭环控制、遥测记录、桌面观测与固件升级。"><meta name="theme-color" content="#f5f6f2">
-<link rel="canonical" href="https://lizonghan24-prog.github.io/projects/motor-lab.html"><meta property="og:type" content="website"><meta property="og:title" content="电机控制与实验采集系统 | 李宗翰"><meta property="og:description" content="以 M3508 为实验对象，贯通闭环控制、遥测记录、桌面观测与固件升级。"><meta property="og:url" content="https://lizonghan24-prog.github.io/projects/motor-lab.html">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css"><script src="../script.js" defer></script></head><body>
-<a class="skip" href="#main">跳转到正文</a><header class="site-header"><div class="wrap nav-inner"><a class="brand" href="../index.html" aria-label="李宗翰，首页"><span class="brand-mark">LZ<span>·</span></span><span>李宗翰<small>ZONGHAN LI</small></span></a><nav aria-label="主导航"><a href="../index.html#projects">项目</a><a href="../index.html#approach">工作方式</a><a href="../index.html#about">关于</a></nav><a class="nav-github" href="https://github.com/lizonghan24-prog" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">（新标签页）</span></a></div></header><main id="main" class="case-main wrap"><a class="back-link" href="../index.html#projects">← 返回项目列表</a><section class="case-hero"><p class="eyebrow">PROJECT 03 / CONTROL &amp; MEASUREMENT</p><h1>电机控制与实验采集系统</h1><p class="case-summary">以 M3508 为实验对象，贯通闭环控制、遥测记录、桌面观测与固件升级。</p><div class="case-meta"><span>运动控制</span><span class="status">工具链已交付</span><div class="tags"><span>STM32</span><span>CAN / USB CDC</span><span>数据采集</span></div></div></section><div class="case-visual blue"><div class="case-illustration"><svg class="project-illustration" viewBox="0 0 500 240" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="133" cy="121" r="51"/><circle cx="133" cy="121" r="33"/><circle cx="133" cy="121" r="10"/><path d="M133 70V54m0 134v-16m-51-51H65m119 0h30"/><rect x="268" y="58" width="153" height="124" rx="6"/><path d="M284 155h120M287 80v75m-3-35h19l14-25 19 49 20-41 14 17h32"/><path stroke-dasharray="4 6" d="M215 121h48"/><path d="M124 121h18m-9-9v18"/></g></svg></div><div class="case-visual-copy"><span class="eyebrow">SYSTEM CONCEPT</span><p>把电机实验需要的控制、观测与数据留存放到一条工具链里，支持参数调试和后续离线分析。</p><small>系统概念示意 · 非产品实拍</small></div></div><div class="case-layout"><aside class="case-aside"><span class="eyebrow">IN THIS PROJECT</span><nav aria-label="项目页导航"><a href="#overview">项目概览</a><a href="#engineering">工程重点</a><a href="#delivery">产物与进展</a></nav></aside><div class="case-content"><section id="overview"><p class="eyebrow">01 / OVERVIEW</p><h2>连接哪些环节</h2><p>基于开发板与 M3508 电机的实验工具项目，包含下位机固件和 PC 上位机。</p><ol class="flow"><li><span>01</span>电机 / IMU</li><li><span>02</span>控制与遥测</li><li><span>03</span>USB 通信</li><li><span>04</span>记录与分析</li></ol></section><section id="engineering"><p class="eyebrow">02 / ENGINEERING</p><h2>工程重点</h2><div class="focus-list"><article><span>01</span><div><h3>控制与观测分工</h3><p>通过 CAN 进行电机控制，并组织转速、角度、电流与板载 IMU 数据，为实验提供一致的观测入口。</p></div></article><article><span>02</span><div><h3>可留存的实验数据</h3><p>使用 USB CDC 将设备数据传递到上位机，支持桌面观测与 CSV 记录，便于复盘和离线处理。</p></div></article><article><span>03</span><div><h3>完整的实验工具链</h3><p>配套 Bootloader 与固件升级流程，并提供 NI 9205 同步接口，使控制程序与采集工具能够协同迭代。</p></div></article></div></section><section id="delivery"><p class="eyebrow">03 / PROGRESS</p><h2>产物与当前进展</h2><ul class="deliverables"><li>下位机源码与固件</li><li>PC 上位机源码、可执行程序和交付包</li><li>数据记录、固件升级与同步接口说明</li></ul><div class="progress-note"><span>当前阶段</span><p>控制、上位机与升级工具链已有交付。NI 9205 的现场同步波形仍待实机验证。</p></div></section></div></div><a class="next-project" href="./motion-platform.html"><span><small>NEXT PROJECT / 下一个项目</small><strong>多轴运动训练平台</strong></span><span aria-hidden="true">↗</span></a></main><footer class="wrap footer"><span>© <span data-year>2026</span> 李宗翰</span><span>EMBEDDED SYSTEMS · SOFTWARE · INTERACTION</span><a href="../index.html">回到首页 ↑</a></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M3508 电机控制与实验采集 — 李宗翰</title>
+  <meta name="description" content="配套电机固件和 PC 上位机，记录转速、角度、电流与 IMU 数据，支持 CSV 导出和固件升级。">
+  <meta name="theme-color" content="#faf9f6">
+  <link rel="canonical" href="https://lizonghan24-prog.github.io/projects/motor-lab.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="M3508 电机控制与实验采集 — 李宗翰">
+  <meta property="og:description" content="配套电机固件和 PC 上位机，记录转速、角度、电流与 IMU 数据，支持 CSV 导出和固件升级。">
+  <meta property="og:url" content="https://lizonghan24-prog.github.io/projects/motor-lab.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=4ef9495466">
+</head>
+<body>
+<a class="skip" href="#main">跳转到正文</a>
+<header class="site-header page-width">
+  <a class="site-name" href="../index.html">李宗翰<span>Zonghan Li</span></a>
+  <nav aria-label="主导航">
+    <a href="../index.html#projects">项目</a>
+    <a href="../index.html#about">关于</a>
+    <a href="https://github.com/lizonghan24-prog">GitHub<span aria-hidden="true"> ↗</span></a>
+  </nav>
+</header>
+<main id="main" class="article-width" tabindex="-1">
+  <a class="back-link" href="../index.html#projects">← 所有项目</a>
+  <article class="project-article">
+    <header class="article-header">
+      <p class="article-category">控制与采集</p>
+      <h1>M3508 电机控制与实验采集</h1>
+      <p class="article-tools">STM32 · CAN · USB CDC · Python</p>
+    </header>
+    <p class="article-intro">这是一套围绕 M3508 电机搭建的实验工具，包括开发板上的控制固件和电脑上的采集程序。它用于调试电机、观察运行数据，并保存实验记录。</p>
+    <section>
+      <h2>控制和数据记录</h2>
+      <p>下位机通过 CAN 控制电机，采集转速、转子角度、电流以及板载 IMU 数据。上位机通过 USB CDC 接收遥测数据，提供桌面观测和 CSV 记录。</p>
+      <p>把控制程序和采集程序放在同一套实验工具里，修改固件后可以继续使用相同的数据记录方式，便于比较不同实验。</p>
+    </section>
+    <section>
+      <h2>升级与同步接口</h2>
+      <p>工程包含 Bootloader、固件升级流程和 NI 9205 同步接口。下位机源码、固件、PC 程序和交付包均已整理。</p>
+      <p>NI 9205 的现场同步波形仍待实机验证。</p>
+    </section>
+    <p class="project-note">固件、上位机和升级工具已有交付。</p>
+  </article>
+<nav class="article-navigation" aria-label="其他项目">
+  <a href="../index.html#projects">项目列表</a>
+  <a href="./motion-platform.html">多轴运动训练平台 →</a>
+</nav>
+</main>
+<footer class="page-width site-footer">
+  <span>© 2026 李宗翰</span>
+  <a href="../index.html">首页</a>
+</footer>
+</body>
+</html>
